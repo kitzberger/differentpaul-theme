@@ -2,9 +2,9 @@
   <h1 id="logo"><a href="{{ base_url_absolute }}">{{ site.logo.text1 }} <span>{{ site.logo.text2 }}</span></a></h1>
   <nav id="nav">
     <ul>
-      <li class="current"><a href="{{ base_url_absolute }}">Welcome</a></li>
+      <li class="current"><a href="{{ base_url_absolute }}">{{ site.welcome ?: 'Welcome' }}</a></li>
       <li class="submenu">
-        <a href="">Layouts</a>
+        <a href="">{{ site.menu ?: 'Menu'}}</a>
         <ul>
           {% for page in pages.children %}
           {% if page.visible %}
@@ -21,14 +21,16 @@
             <a href="{{ mitem.link }}">{{ mitem.text }}</a>
           </li>
           {% endfor %}
+          {% if submenu %}
           <li class="submenu">
-            <a href="">Submenu</a>
+            <a href="">{{ site.submenu ?: 'Submenu' }}</a>
             <ul>
               {% for submenu in site.submenu %}
               <li><a href="{{ submenu.link }}">{{ submenu.text }}</a></li>
               {% endfor %}
             </ul>
           </li>
+          {% endif %}
         </ul>
       </li>
 

@@ -3,11 +3,11 @@
 {% block content %}
 <article id="main">
     <header class="special container">
-        <span class="icon fa-thumbs-up"></span>
+        <span class="icon fa-{{ page.header.icon ?: 'thumbs-up' }}"></span>
         <h2>{{ page.header.title }}</h2>
     </header>
 
-    <section class="wrapper style4 special container 75%">
+    <section class="wrapper container 75% {{ page.header.content_class ?: 'style4 special' }} ">
         <div class="content">
           {{ page.content }}
         </div>

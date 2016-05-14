@@ -2,10 +2,10 @@
 {% block content %}
 <article id="main">
   <header class="special container">
-    <span class="icon fa-envelope"></span>
+    <span class="icon fa-{{ page.header.icon ?: 'envelope' }}"></span>
     <h2>{{ form.message }}</h2>
   </header>
-  <section class="wrapper style4 special container 75%">
+  <section class="wrapper container 75% {{ page.header.content_class ?: 'style4 special' }} ">
     <div class="content">
       {{ content }}
       {% include "forms/data.html.twig" %}
