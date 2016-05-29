@@ -16,7 +16,6 @@
                 {% if browser.getBrowser == 'msie' and browser.getVersion == 9 %}
                     {% do assets.addCss('theme://assets/css/ie9.css') %}
                 {% endif %}
-                {% do assets.addCss('theme://assets/css/differentpaul.css') %}
         {% endblock %}
         {{ assets.css() }}
 
