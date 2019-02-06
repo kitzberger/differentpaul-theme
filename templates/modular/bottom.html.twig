@@ -9,5 +9,9 @@
                 <li><a href="{{ button.url }}" class="button {% if button.class %}{{ button.class }}{% endif %}">{{ button.text }}</a></li>
             {% endfor %}
         </ul>
+        <h3>Beiträge auf Instagram</h3>
+        <ul class="instagram">
+            {{ instagram_feed() }}
+        </ul>
     </footer>
 </section>
