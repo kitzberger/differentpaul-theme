@@ -1,7 +1,7 @@
 <section class="wrapper style3 container special">
 
     <header class="major">
-        <h2>{{ page.header.title }}</h2>
+        <h2>{{ page.header.title|raw }}</h2>
     </header>
 
     {% for row in page.header.portfolio|batch(2) %}
@@ -9,8 +9,11 @@
             {% for item in row %}
                 <div class="6u 12u(narrower)">
                     <section>
-                        {{ page.media[item.image].lightbox(1600,706).cropResize(800,353).html(item.title) }}
-                        <!--<a href="{{ item.image_link }}" class="image featured"><img src="{{ page.media[item.image].url }}" alt="" /></a>-->
+                        {% if item.image_link %}
+                            <a href="{{ item.image_link }}" class="image featured">{{ page.media[item.image].lightbox(1600,706).cropResize(800,353).html(item.title) }}</a>
+                        {% else %}
+                            <span class="image featured">{{ page.media[item.image].lightbox(1600,706).cropResize(800,353).html(item.title) }}</span>
+                        {% endif %}
                         <header>
                             <h3>{{ item.title }}</h3>
                         </header>
