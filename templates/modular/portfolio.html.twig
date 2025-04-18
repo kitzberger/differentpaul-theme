@@ -10,7 +10,7 @@
                 <div class="6u 12u(narrower)">
                     <section>
                         {% if item.image_link %}
-                            <a href="{{ item.image_link }}" class="image featured">{{ page.media[item.image].lightbox(1600,706).cropResize(800,353).html(item.title) }}</a>
+                            <a href="{{ item.image_link }}" class="image featured">{{ page.media[item.image].cropResize(800,353).html(item.title) }}</a>
                         {% else %}
                             <span class="image featured">{{ page.media[item.image].lightbox(1600,706).cropResize(800,353).html(item.title) }}</span>
                         {% endif %}
